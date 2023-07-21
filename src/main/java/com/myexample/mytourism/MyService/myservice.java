@@ -62,39 +62,7 @@ public class myservice {
         mylogin.save(userlogin);
     }
     
-    // public boolean isLoggedIn(HttpServletRequest request) {
-    //     HttpSession session = request.getSession(false);
-    //     return session != null && session.getAttribute("loggedInUserEmail") != null;
-    // }
-    
-    // public boolean logeduser(UserLogin userlogin) {
-    //     // Check if the provided email and password match the login credentials in the database
-    //     UserLogin loggedInUser = mylogin.findByEmail(userlogin.getEmail());
-
-    //     if (loggedInUser != null && loggedInUser.getPassword().equals(userlogin.getPassword())) {
-    //         return true; // Login successful
-    //     } else {
-    //         return false; // Login failed
-    //     }
-    // }
-      
-    // public void addUserLoginIfNotPresent(UserLogin userlogin) {
-    //     UserLogin existingUser = mylogin.findByEmail(userlogin.getEmail());
-
-    //     if (existingUser == null) {
-    //         // User with the given email does not exist in the database, add the user
-    //         mylogin.save(userlogin);
-    //     } else {
-    //         // User with the given email already exists, update the username and password if necessary
-    //         if (!existingUser.getUsername().equals(userlogin.getUsername())) {
-    //             existingUser.setUsername(userlogin.getUsername());
-    //         }
-    //         if (!existingUser.getPassword().equals(userlogin.getPassword())) {
-    //             existingUser.setPassword(userlogin.getPassword());
-    //         }
-    //         mylogin.save(existingUser);
-    //     }
-    // }
+   
 
     public UserLogin getUserByEmail(String email) {
         return mylogin.findByEmail(email);

@@ -138,39 +138,6 @@ public String userloggin(@ModelAttribute UserLogin userlogin,Model model) {
 
   
 
-// @GetMapping("/dashboard")
-// public String showDashboard(Userenquiry userenquiry, UserLogin userlogin, Model model) {
-//     String loggedInUserEmail = userlogin.getEmail();
-
-//     // Check if loggedInUserEmail is null or empty before accessing it.
-//     if (loggedInUserEmail != null && !loggedInUserEmail.isEmpty()) {
-//         model.addAttribute("result", loggedInUserEmail);
-
-//         // Compare the emails using .equals() to check for content equality
-//         if (loggedInUserEmail.equals(userenquiry.getEmail())) {
-//             // Emails match, so fetch the package history for the logged-in user.
-//             List<Userenquiry> packageHistory = enqser.getPackageHistoryForUser(loggedInUserEmail);
-//             model.addAttribute("packageHistory", packageHistory);
-//         }
-//     } else {
-        
-//         return "redirect:/login"; // Replace "/login" with the URL of your login page.
-//     }
-
-//     return "userhistory"; // Replace "userhistory" with the appropriate view name for your dashboard page.
-// }
-
-
-
-
-    // @GetMapping("/dashboard/{email}")
-    // public ResponseEntity<List<Userenquiry>> showDashboard(@RequestParam(name = "email") String email) {
-    //     // Implement the logic to fetch the package history for the provided email
-    //     List<Userenquiry> packageHistory = enqser.getPackageHistoryForUser(email);
-
-    //     // Return the package history as a response (for demonstration purposes)
-    //     return ResponseEntity.ok(packageHistory);
-    // }
 
 
 
@@ -221,38 +188,6 @@ public String userloggin(@ModelAttribute UserLogin userlogin,Model model) {
         return "viewpkghistory";
     }
 
-    // user package history
-
-    // public String allpackagehistory(Model model) {
-    // String loggedInUserEmail = ser.getLoggedInUserEmail();
-    // if (loggedInUserEmail != null) {
-    // List<Userenquiry> records =
-    // enqser.getPackageHistoryForUser(loggedInUserEmail);
-    // model.addAttribute("records", records);
-    // return "viewpkghistory";
-    // } else {
-    // return "redirect:/loginn"; // Redirect to the login page if the user is not
-    // logged in
-    // }
-    // }
-
-    // @GetMapping("/dashboard")
-    // public String showDashboard(HttpServletRequest request, Model model) {
-    // if (ser.isLoggedIn(request)) {
-    // // User is logged in, retrieve the email from the session
-    // HttpSession session = request.getSession(false);
-    // String email = (String) session.getAttribute("email");
-
-    // // Use the email to fetch the package history for the logged-in user
-    // List<Userenquiry> packageHistory = ser.getPackageHistoryForUser(email);
-    // model.addAttribute("packageHistory", packageHistory);
-
-    // return "dashboard"; // Replace "dashboard" with the appropriate dashboard
-    // page
-    // } else {
-    // // User is not logged in, redirect to the login page
-    // return "redirect:/loginn";
-    // }
-    // }
+    
 
 }
