@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Travel Website</title>
+    
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" href="resources/css/style.css" /> -->
+        <!-- Font Awesome Cdn Link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    
+
+        <style> 
+          Body {
+            font-family: Calibri, Helvetica, sans-serif;
+            background-color: pink;
+          }
+          button { 
+                 background-color: #4CAF50; 
+                 width: 100%;
+                  color: rgb(17, 17, 16); 
+                  padding: 15px; 
+                  margin: 10px 0px; 
+                  border: none; 
+                  cursor: pointer; 
+                   } 
+           form { 
+                  border: 3px solid #f1f1f1; 
+                  width:450px;
+                  margin-left: 250px;
+              } 
+           input[type=text], input[type=password] { 
+                  width: 100%; 
+                  margin: 8px 0;
+                  padding: 12px 20px; 
+                  display: inline-block; 
+                  border: 2px solid green; 
+                  box-sizing: border-box; 
+              }
+           button:hover { 
+                  opacity: 0.7; 
+              } 
+            .cancelbtn { 
+                  width: auto; 
+                  padding: 10px 18px;
+                  margin: 10px 5px;
+              } 
+                
+             
+           .container { 
+                  padding: 25px; 
+                  background-color: lightblue;
+              } 
+          </style> 
+</head>
+<body>
+
+  <center> <h1> User Login Form </h1> </center> 
+  <form action="#" th:action="@{/uslogin}" method="post" th:object="${userlogin}">
+      <div class="container"> 
+       
+          <label>Username : </label> 
+          <input type="text" placeholder="Enter Username"  name="username" required>
+          <label for="email"><b>Email</b></label>
+          <input type="email" placeholder="Enter Email" name="email" required>
+          <label>Password : </label> 
+          <input type="password" placeholder="Enter Password" name="password" id="password" required>
+          <label>Show password</label>
+          <input type="checkbox" id="showPassword" onchange="togglePasswordVisibility()">
+          <button type="submit">Login</button> 
+          <input type="checkbox" checked="checked"> Remember me 
+        
+          <button type="button" class="cancelbtn"> Cancel</button> 
+          Forgot <a href="#"> password? </a> 
+       
+      not an account then sign up header
+      <a href="/signnup" th:action="@{/signnup}" >Sign up</a> 
+       
+    </div>
+  </form> 
+ 
+  <div th:if="${error}" class="error-message">
+    <p th:text="${error}" style="color: red;"></p>
+</div>
+
+<script>
+  function togglePasswordVisibility() {
+    const passwordInput = document.getElementById("password");
+    
+    const showPasswordCheckbox = document.getElementById("showPassword");
+  
+    if (showPasswordCheckbox.checked) {
+      passwordInput.type = "text";
+      
+    } else {
+      passwordInput.type = "password";
+     
+    }
+  }
+</script>
+ 
+</body>
+</html>

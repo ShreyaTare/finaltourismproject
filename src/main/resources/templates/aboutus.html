@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+	<title>Travel Website</title>
+	
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}"/>
+        <!-- Font Awesome Cdn Link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+         
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+	<header>
+        <div class="container">
+          <div class="nav_bar">
+            <div class="logo">
+              <i class="fa-solid fa-route"></i>
+              <h4>GO</h4>
+            </div>
+    
+              <div class="menu_list">
+                <a href="#"  th:href="@{/}">Home</a>
+                <a href="#" th:href="@{/abtus}">aboutus</a>
+				<a href="#" th:href="@{/servicee}">Services</a>
+                <!-- <a href="#" th:href="@{/pkg}">Packages</a> -->
+                <!-- <a href="#">Services</a> -->
+                <!-- <a href="#" th:href="@{/form}">Enquiry</a> -->
+                <a href="#" th:href="@{/cntmelist}">Contact US </a>
+				
+				
+              
+              </div>
+          </div>
+        </div>
+      </header>
+
+	<!-- Main content here -->
+	<!-- <section>
+		<div class="letsgo">
+		  <h1>Welcome Look at The places!!
+		  </h1>
+		  
+		</div></section>
+<section class="hillsinfo">
+	<div class="text-container">
+		<div class="hills">
+	
+		<img src="../static/images/Kasauli.jpg" th:src="@{/images/Kasauli.jpg}">
+		<p class="info">Getaway in Kasauli <br>Looking for a good getaway place away from the hustle – bustle of the city? This cantonment hill 
+			stations in Himachal is near Shimla, Kasauli will give you the break that you need from the city life. 
+			Kasauli is surrounded by apple orchards, lush green valleys, and architecture that are remnants of the days gone by. 
+			It creates the perfect atmosphere to just let go and relax. Head toward the ‘Monkey Point’ or
+			 take a stroll around the lush valley or just hang out at Mall Road and enjoy some delicious momos.
+		Distance from Nearest Airport: The Chandigarh Airport is the closest to Kasauli. It is situated 69-70 km away from Kasauli and will take you 1-2 hours approximately to reach there.
+		<br>Best time to visit: March to June is the best time to visit Kasauli
+		<br>TripAdvisor rating: 4/5</p>
+	</div>
+	  </div>
+	<div class="hills">
+		
+		<p class="info">HILLS- <br>Looking for a good getaway place away from the hustle – bustle of the city? 
+			This cantonment hill stations in Himachal is near Shimla, Kasauli will give you the break that you need from the city 
+			life. Kasauli is surrounded by apple orchards, lush green valleys, and architecture that are remnants of the days 
+			gone by. It creates the perfect atmosphere to just let go and relax. Head toward the ‘Monkey Point’ or take a stroll 
+			around the lush valley or just hang out at Mall Road and enjoy some delicious momos.
+
+			Distance from Nearest Airport: The Chandigarh Airport is the closest to Kasauli. 
+			It is situated 69-70 km away from Kasauli and will take you 1-2 hours approximately to reach there.
+			<br>Best time to visit: March to June is the best time to visit Kasauli
+			<br>TripAdvisor rating: 4/5</p>
+			<img src="../static/images/hills.jpg" th:src="@{/images/hills.jpg}">
+	</div>
+	<div class="hills">
+		<img src="../static/images/parasailling.jpg" th:src="@{/images/parasailling.jpg}">>
+		<p class="info">Looking for a good getaway place away from the hustle – 
+			bustle of the city? This cantonment hill stations in Himachal is near Shimla, 
+			Kasauli will give you the break that you need from the city life. Kasauli is surrounded by apple orchards, 
+			lush green valleys, and architecture that are remnants of the days gone by. It creates the perfect atmosphere 
+			to just let go and relax. Head toward the ‘Monkey Point’ or take a stroll around the lush valley or just hang
+			 out at Mall Road and enjoy some delicious momos.
+
+			Distance from Nearest Airport: The Chandigarh Airport is the closest to Kasauli. It is situated 69-70 km away from Kasauli and will take you 1-2 hours approximately to reach there.
+			Best time to visit: March to June is the best time to visit Kasauli
+			TripAdvisor rating: 4/5</p>
+	</div>
+	
+	
+</section> -->
+
+<section>
+	
+	<div class="container">
+		<div class="shiny-heading ">
+		
+		<h1 class="display-1">About us</h1>
+	</div>
+	</div>
+</section>
+	<!-- Main content here -->
+	
+
+<div class="cards">
+<div class="row row-cols-1 row-cols-md-3 g-4">
+	<div class="col">
+	  <div class="card h-100">
+		<img src="../static/images/parasailling.jpg" th:src="@{/images/parasailling.jpg}" class="card-img-top" alt="...">
+		<div class="card-body">
+		  <h5 class="card-title">Parasailling</h5>
+		  <p class="card-text">Looking for a good getaway place away from the hustle – 
+			bustle of the city? This cantonment hill stations in Himachal is near Shimla, 
+			Kasauli will give you the break that you need from the city life. 
+
+	         <br>
+			TripAdvisor rating: 4/5</p>
+		</div>
+	  </div>
+	</div>
+	<div class="col">
+	  <div class="card h-100">
+		<img src="../static/images/Kasauli.jpg" th:src="@{/images/Kasauli.jpg}" class="card-img-top" alt="...">
+		<div class="card-body">
+		  <h5 class="card-title">Kasauli</h5>
+		  <p class="card-text">Looking for a good getaway place away from the hustle – 
+			bustle of the city? This cantonment hill stations in Himachal is near Shimla, 
+			Kasauli will give you the break that you need from the city life. 
+
+			
+			Best time to visit: March to June is the best time to visit Kasauli
+			TripAdvisor rating: 4/5</p>
+		</div>
+	  </div>
+	</div>
+	<div class="col">
+	  <div class="card h-100">
+		<img src="../static/images/hills.jpg" th:src="@{/images/hills.jpg}" class="card-img-top" alt="...">
+		<div class="card-body">
+		  <h5 class="card-title">Hills</h5>
+		  <p class="card-text">Looking for a good getaway place away from the hustle – bustle of the city? 
+			This cantonment hill stations in Himachal is near Shimla, Kasauli will give you the break that you need from the city 
+			life. 
+			<br>Best time to visit: March to June is the best time to visit Kasauli
+			<br>TripAdvisor rating: 4/5</p>
+		</div>
+	  </div>
+	</div>
+	<div class="col">
+	  <div class="card h-100">
+		<img src="../static/images/spiritual1.jpg" th:src="@{/images/spiritual1.jpg}" class="card-img-top" alt="...">
+		<div class="card-body">
+		  <h5 class="card-title">Spiritual1</h5>
+		  <p class="card-text">Looking for a good getaway place away from the hustle – 
+			bustle of the city? This cantonment hill stations in Himachal is near Shimla, 
+			Kasauli will give you the break that you need from the city life. 
+            <br>
+			TripAdvisor rating: 4/5</p>
+		</div>
+	  </div>
+	</div>
+  </div>
+</div>
+
+
+
+
+
+
+    
+    <section class="aboutinfo">
+		<h1>VISION, MISSION, VALUES, AND PURPOSE</h1>
+<ul>
+<li>Vision</li>
+<p>Travel enriches lives and benefits communities through welcoming the people of the world to the USA</p>
+
+<li>Mission</li>
+<p>Contribute to community prosperity throughout the USA by marketing the welcome, 
+	<br>driving international visitation, and clearly communicating U.S. travel policy</p>
+
+<li>Values</li>
+
+<p>Courage: We are bold and take smart risks in our work and our relationships
+Inclusivity: Our company culture and our work is welcoming to all
+Collaboration: We prioritize working relationships and communication
+Partnership: We act on the knowledge that we are stronger together
+Accountability: We work hard, deliver results, and know when to rest
+</p>
+<li>Purpose</li>
+<p>Create Innovative Marketing: Promote travel to the entirety of the USA to support the wide variety of communities within and beyond our gateways
+Market the Welcome: Convey a welcoming message and communicate travel policies to facilitate confident, informed visitors
+Build and Maintain Trust: Demonstrate our integrity through inclusion, transparency, and compliance to cultivate trusted relationships with our global community of stakeholders
+Add and Create Value: Pioneer marketing solutions on behalf of our industry to leverage the USA brand in ways only possible at the national level
+Drive Results: Use performance data from macroeconomic returns and other key indicators to optimize resources against our multifaceted mission
+Our Team
+LEARN MORE</p>
+</ul>
+	 </section>
+    
+    
+
+
+     
+     <script src="jsfile/index.js"></script>
+	 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+	
+
+</body>
+</html>

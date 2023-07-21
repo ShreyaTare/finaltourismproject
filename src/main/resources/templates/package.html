@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+
+<head>
+  <title>Travel Website</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}" />
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="nav_bar">
+        <div class="logo">
+          <i class="fa-solid fa-route"></i>
+          <h4>GO</h4>
+        </div>
+
+        <div class="menu_list">
+          <!-- <a href="#" th:href="@{/}">Home</a>
+                
+                     <a href="#">Services</a> -->
+                     <a href="#" th:href="@{/pkg}">Packages</a>
+                    <a href="#" th:href="@{/form}">Enquiry</a>
+                    <!-- <a href="#" th:href="@{/cntmelist}">Contact US</a> -->
+                    <a href="#" th:href="@{/his}">Package History</a>
+                    <a href="#" th:href="@{/dashboard}">Userhistory</a>
+          <button class="lg_btn">Logout</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Main content here -->
+  <h1>Welcome
+  </h1>
+  <section >
+    <h1>Yayyy Login Successful <span th:text="${result}"></span>
+    </h1>
+  </section>
+  
+
+
+  <section>
+    <!-- <div class="letsgo">
+            <h1>Welcome
+            </h1>
+            <h2>Lets Go</h2>
+            
+<p class="view">Check out
+     our latest and 
+                greatest
+  Tour Packages!</p>
+           
+          </div> -->
+    <div id="nature-adventure-container">
+      <div id="nature-adventure-button">
+        <div id="saved-packages"></div>
+        <div class="wrapper">
+          <div class="packagebutton container">
+
+            <button class="showpackage" onclick="showNaturePackages()">Nature</button>
+            <button class="showpackage" onclick="showAdventurePackages()">Adventure</button>
+            <button class="showpackage" onclick="showSpiritualPackages()">Spiritual</button>
+            <button class="showpackage" onclick="showCulturePackages()">Culture & Heritage</button>
+
+          </div>
+          <!--nature package-->
+          <div class="package-gallery container" id="nature-packages" style="display: none;">
+            
+
+            <div class="gallery">
+
+              <div class="item">
+                <div class="tour-item">
+                  
+
+                  <h3>Shimla</h3>
+                  <img src="../static/images/shimlapck.jpg" th:src="@{/images/shimlapck.jpg}" alt="Featured tour 1">
+                  <p>Shimla is the capital and the largest city of the northern Indian state of Himachal Pradesh.<br>In
+                    1864, Shimla was declared as the summer capital of British</p>
+
+                  <span class="like-button" onclick="handleLikeButtonClick(this)">&#x2661;</span>
+                  <button id="buy-button-id" class="buy-button">
+                    <a href="#" th:href="@{/form}">Buy Package</a>
+                  </button>
+                </div>
+                <div class="tour-item">
+                  <h3>janjeahli</h3>
+                  <img src="../static/images/janjeahli.jpg" th:src="@{/images/janjeahli.jpg}" alt="Featured tour 1">
+                  <p>Janjeahli is the capital and the largest city of the northern Indian state of Himachal
+                    Pradesh.<br>In 1864, Shimla was declared as the summer capital of British</p>
+                  <span class="like-button" onclick="handleLikeButtonClick(this)">&#x2661;</span>
+                  <button id="buy-button-id" class="buy-button">
+                    <a href="#" th:href="@{/form}">Buy Package</a>
+                  </button>
+                </div>
+                <div class="tour-item">
+                  <h3>Kasauli</h3>
+                  <img src="../static/images/Kasauli.jpg" th:src="@{/images/Kasauli.jpg}" alt="Featured tour 1">
+                  <p>Kasauli is the capital and the largest city of the northern Indian state of Himachal Pradesh.<br>In
+                    1864, Shimla was declared as the summer capital of British</p>
+                  <span class="like-button" onclick="handleLikeButtonClick(this)">&#x2661;</span>
+                  <button id="buy-button-id" class="buy-button">
+                    <a href="#" th:href="@{/form}">Buy Package</a>
+                  </button>
+                </div>
+              </div>
+              <!-- Add more tour items here -->
+            </div>
+          </div>
+
+          <!--adventure package-->
+          <div class="package-gallery" id="adventure-packages" style="display: none;">
+            <div class="gallery">
+              <div class="item">
+                <div class="tour-item">
+
+                  <h3>Parasailling</h3>
+                  <img src="../static/images/parasailling.jpg" th:src="@{/images/parasailling.jpg}"
+                    alt="Featured tour 1">
+                  <p>Shimla is the capital and the largest city of the northern Indian state of Himachal Pradesh.<br>In
+                    1864, Shimla was declared as the summer capital of British</p>
+                  <span class="like-button" onclick="handleLikeButtonClick(this)">&#x2661;</span>
+                  <button id="buy-button-id" class="buy-button">
+                    <a href="#" th:href="@{/form}">Buy Package</a>
+                  </button>
+                </div>
+                <div class="tour-item">
+                  <h3>Trekking</h3>
+                  <img src="../static/images/hills.jpg" th:src="@{/images/hills.jpg}" alt="Featured tour 1">
+                  <p>Shimla is the capital and the largest city of the northern Indian state of Himachal Pradesh.<br>In
+                    1864, Shimla was declared as the summer capital of British</p>
+                  <span class="like-button" onclick="handleLikeButtonClick(this)">&#x2661;</span>
+                  <button id="buy-button-id" class="buy-button">
+                    <a href="#" th:href="@{/form}">Buy Package</a>
+                  </button>
+                </div>
+
+              </div>
+              <!-- Add more tour items here -->
+            </div>
+          </div>
+
+          <!--spiritual package-->
+          <div class="package-gallery" id="spiritual-packages" style="display: none;">
+            <div class="gallery">
+              <div class="item">
+                <div class="tour-item">
+
+                  <h3>Jakhu Temple</h3>
+                  <img src="../static/images/spiritual1.jpg" th:src="@{/images/spiritual1.jpg}" alt="Featured tour 1">
+                  <p>Jakhu Temple (also Jakhoo Temple) is an ancient temple in Shimla, Himachal Pradesh, India,
+                    dedicated to the Hindu deity Lord Hanuman.[1] It is situated on Jakhu Hill, Shimla's highest peak,
+                    2.5 km (1.6 mi) east of the Ridge at a height of 2,455 m (8,054 ft) above sea level.[2] Each year, a
+                    festival is held on Dussehra, before 1972 the festival used to be held at Annadale.[3] Shri Hanuman
+                    Jakhu is a statue situated in the temple premises which is one of the tallest in the world.[4]
+
+                    According to the Ramayana, Hanuman stopped at the location to rest while searching for the Sanjivni
+                    Booti to revive Lakshmana. A giant 108-feet-high idol of Hanuman was unveiled at Jakhu Hanuman
+                    temple on 4 November 2010. At 108 feet (33 m), it surpasses the statue of Christ the Redeemer, which
+                    measures at 98 feet (30 m), in Rio de Janeiro, Brazil. The cost of construction was Rs 1.5 crores.
+                    The public unveiling was officiated by Abhishek Bachchan.</p>
+                  <span class="like-button" onclick="handleLikeButtonClick(this)">&#x2661;</span>
+                  <button id="buy-button-id" class="buy-button">
+                    <a href="#" th:href="@{/form}">Buy Package</a>
+                  </button>
+                </div>
+                <div class="tour-item">
+                  <h3>Buddha Statue</h3>
+                  <img src="../static/images/spiritual2.jpg" th:src="@{/images/spiritual2.jpg}" alt="Featured tour 1">
+                  <p>Langza is one of the remotest villages of India in the state of Himachal Pradesh. Close to
+                    headquarters of Spiti Valley - Kaza, Langza is a high-altitude village is known for ancient marine
+                    fossils, for spotting endangered animals, for the warmth of the people, and for its gigantic Buddha
+                    statue overlooking the Spiti Valley. The landscapes of Langza village can leave anyone spellbound.
+                    In fact, we rate Langza as the most beautiful village we have visited in Spiti Valley. In Langza, we
+                    got a first-hand experience on how people live and co-exist harmoniously with nature. Their way of
+                    living is totally in sync with the terrain’s rough geography and unforgiving weather. This blog will
+                    serve as a travel guide for you to visit Langza village.</p>
+                  <span class="like-button" onclick="handleLikeButtonClick(this)">&#x2661;</span>
+                  <button id="buy-button-id" class="buy-button">
+                    <a href="#" th:href="@{/form}">Buy Package</a>
+                  </button>
+                </div>
+                <div class="tour-item">
+                  <h3>Tara Devi Temple</h3>
+                  <img src="../static/images/spiritual3.jpg" th:src="@{/images/spiritual3.jpg}" alt="Featured tour 1">
+                  <p>Tara Devi Temple, situated on the western side of Shimla, boasts of an excellent location with
+                    beautiful valleys around the hill. It is one of the most famous sightseeing places in Shimla and has
+                    a divine atmosphere that attracts locals as well as a huge crowd of tourists during festive seasons.
+
+                    Surrounded by a mesmerizing view of the lofty mountains, pine forests and lush greenery, the
+                    tranquil setting of the temple makes you forget everything about your day-to-day worries of life.
+                    Located only 11 km drive away from the city centre, this religious place is not less than a paradise
+                    for experience seekers.</p>
+                  <span class="like-button" onclick="handleLikeButtonClick(this)">&#x2661;</span>
+                  <button id="buy-button-id" class="buy-button">
+                    <a href="#" th:href="@{/form}">Buy Package</a>
+                  </button>
+                </div>
+
+              </div>
+              <!-- Add more tour items here -->
+            </div>
+          </div>
+
+          <!--culture & Heritage-->
+          <div class="package-gallery" id="culture-packages" style="display: none;">
+            <div class="gallery">
+              <div class="item">
+                <div class="tour-item">
+
+                  <h3>culture</h3>
+                  <img src="../static/images/parasailling.jpg" th:src="@{/images/parasailling.jpg}"
+                    alt="Featured tour 1">
+                  <p>Shimla is the capital and the largest city of the northern Indian state of Himachal Pradesh.<br>In
+                    1864, Shimla was declared as the summer capital of British</p>
+                  <span class="like-button" onclick="handleLikeButtonClick(this)">&#x2661;</span>
+                  <button id="buy-button-id" class="buy-button">
+                    <a href="#" th:href="@{/form}">Buy Package</a>
+                  </button>
+                </div>
+                <div class="tour-item">
+                  <h3>heritage</h3>
+                  <img src="../static/images/hills.jpg" th:src="@{/images/hills.jpg}" alt="Featured tour 1">
+                  <p>Shimla is the capital and the largest city of the northern Indian state of Himachal Pradesh.<br>In
+                    1864, Shimla was declared as the summer capital of British</p>
+                  <span class="like-button" onclick="handleLikeButtonClick(this)">&#x2661;</span>
+                  <button id="buy-button-id" class="buy-button">
+                    <a href="#" th:href="@{/form}">Buy Package</a>
+                  </button>
+
+                </div>
+
+              </div>
+              <!-- Add more tour items here -->
+            </div>
+          </div>
+
+
+          <div id="wishlist-button">
+            <a href="Wishlist.html">View Wishlist</a>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <script src="../static/jsfile/index.js" th:src="@{/jsfile/index.js}"></script>
+
+  <!--footer-->
+  <!-- <footer id="contact" href="contact">
+
+		<h3>Contact Us</h3>
+			<p>For any inquiries, please reach out to us:</p>
+			<ul>
+				<li>Email: <a href="shreyatare15@gmail.com">shreyatare15@gmail.com</a></li>
+				<li>Phone: <a href="tel:+1234567890">+91 7249320106</a></li>
+	        </ul>
+
+	 </footer> -->
+
+</body>
+
+</html>

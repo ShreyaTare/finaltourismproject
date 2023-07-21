@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+	<title>Travel Website</title>
+	
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}" />
+        <style>
+          .gallery {
+              background-color: blanchedalmond;
+               gap: 5px;
+              display: flex;
+              flex-wrap: wrap;
+              flex-direction: row;
+              align-content: center;
+              margin-top: 100px;
+              justify-content: space-between;
+          }
+  
+          .gallery img {
+              max-width: 50%;
+              gap: 5px;
+              height: 250px;
+              border-radius: 10px;
+              box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+              width: calc(25% - 10px);
+              margin: 20px;
+  
+          }
+  
+          .gallery-img {
+              max-width: 70px;
+              height: 100px;
+              
+  
+          }
+
+
+          a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.cardds{
+  margin-top: 20px;
+  margin-left: 100px;
+  display: flex;
+              flex-wrap: wrap;
+              flex-direction: row;
+              gap:15px
+  
+}
+
+.cardds img{
+  height: 200px;
+  
+
+}
+
+
+
+.ticker {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    height: 60px;
+    margin: 0 auto;
+}
+.news {
+    width: 76%;
+    background: #cc4444;
+    padding: 0 2%;
+}
+.title {
+    width: 20%;
+    text-align: center;
+    background: #c81c1c;
+    position: relative;
+}
+.title:after {
+    position: absolute;
+    content: "";
+    right: -16%;
+    border-left: 20px solid #c81c1c;
+    border-top: 33px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 33px solid transparent;
+    top: 0;
+}
+.title h5 {
+    font-size: 18px;
+    margin: 8% 0;
+}
+.news marquee {
+    font-size: 18px;
+}
+.newscontainer{
+  background-color: aliceblue;
+}
+
+
+      </style>        
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
+       <!-- Font Awesome Cdn Link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="nav_bar">
+        <div class="logo">
+          <i class="fa-solid fa-route"></i>
+          <h4>GO</h4>
+        </div>
+
+          <div class="menu_list">
+            <a href="#" th:href="@{/}">Home</a>
+            <a href="#" th:href="@{/abtus}">aboutus</a>
+             <a href="#" th:href="@{/servicee}"> Our Service</a>
+              <!-- <a href="#" th:href="@{/pkg}">Packages</a>
+             
+            <a href="#" th:href="@{/form}">Enquiry</a>  -->
+           
+            <a href="#" th:href="@{/contct}">Contact US</a>
+
+            <button><a href="#" th:href="@{/loginn}">Login </a></button>
+             
+          </div>
+      </div>
+    </div>
+  </header>
+	
+  <div class="newscontainer">
+    <div class="ticker">
+      <div class="title"><h5>See Headline</h5></div>
+      <div class="news">
+        <marquee>
+          <p>
+           yOU wANT TO bUY package then Login First.then Explore the world.....!!!!!
+        </p>
+        </marquee>
+      </div>
+    </div>
+  </div>
+
+ <section class="cardds">
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="../static/images/spiritual1.jpg" th:src="@{/images/spiritual1.jpg}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Jakhu Temple</h5>
+          <p class="card-text">Jakhu Temple (also Jakhoo Temple) is an ancient temple in Shimla, Himachal Pradesh, India, dedicated to the Hindu deity Lord Hanuman.[1] It is situated on Jakhu Hill, Shimla's highest peak, 2.5 km (1.6 mi) east of the Ridge at a height of 2,455 m (8,054 ft) above sea level.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="../static/images/Camping.png" th:src="@{/images/Camping.png}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Camping</h5>
+          <p class="card-text">Camping is one of the most famous adventure sports in Shimla and lets you camp below the starts while marveling at the beautiful sight of the surroundings. Accommodation in tents during camping offers the best experience.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="../static/images/MountainCycling.png" th:src="@{/images/MountainCycling.png}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">mountain biking</h5>
+          <p class="card-text"> mountain biking is one of the most popular adventure sports in Shimla among adventure enthusiasts. You can rent the bike and explore the hill station as much as you wish to. It can be rented for 10 hours, starting from 9 am in the morning to 7 pm in the evening.</p>
+          <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="../static/images/riverrafting.png" th:src="@{/images/riverrafting.png}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">riverrafting</h5>
+          <p class="card-text">One such adventure sports in Shimla is river rafting that has become highly famous as a result of the rivers. The adventure sports in Shimla Himachal are usually preferred by youth and adults who feel a sense of excitement and rush when undergoing the activity.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+ </section>
+
+        <div class="gallery">
+            <img src="../static/images/spiritual1.jpg" th:src="@{/images/spiritual1.jpg}" alt="Featured tour 1">
+               
+            <img src="../static/images/spiritual2.jpg" th:src="@{/images/spiritual2.jpg}" alt="Featured tour 1">
+            
+            <img src="../static/images/spiritual3.jpg" th:src="@{/images/spiritual3.jpg}" alt="Featured tour 1">
+
+            <img src="../static/images/slider1.jpg" th:src="@{/images/slider1.jpg}" alt="Featured tour 1">
+
+            <img src="../static/images/slider2.jpg" th:src="@{/images/slider2.jpg}" alt="Featured tour 1">
+
+            <img src="../static/images/slider3.jpg" th:src="@{/images/slider3.jpg}" alt="Featured tour 1">
+
+            <img src="../static/images/shimlapck.jpg" th:src="@{/images/shimlapck.jpg}" alt="Featured tour 1">
+
+            <img src="../static/images/Kasauli.jpg" th:src="@{/images/Kasauli.jpg}" alt="Featured tour 1">
+
+            <!-- <img src="../static/images/parasailling.jpg" th:src="@{/images/parasailling.jpg}" alt="Featured tour 1">
+
+            <img src="../static/images/pack2ndcon.jpg" th:src="@{/images/pack2ndcon.jpg}" alt="Featured tour 1"> -->
+
+        </div>
+
+
+
+          
+        
+       
+</body>
+</html>

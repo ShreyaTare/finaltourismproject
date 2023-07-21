@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+    <head>
+        <title>Travel Website</title>
+        
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}" />
+            <!-- Font Awesome Cdn Link -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+        
+    </head>
+    <body>
+        <header>
+            <div class="container">
+              <div class="nav_bar">
+                <div class="logo">
+                  <i class="fa-solid fa-route"></i>
+                  <h4>GO</h4>
+                </div>
+        
+                  <div class="menu_list">
+                    <!-- <a href="#"  th:href="@{/}">Home</a>
+                    <a href="#"  th:href="@{/abtus}">aboutus</a> -->
+                    <a href="#" th:href="@{/pkg}">Packages</a>
+                    <!-- <a href="#">Services</a> -->
+                    <a href="#" th:href="@{/form}">Enquiry</a>
+                    <a href="#" th:href="@{/cntmelist}">Contact US</a>
+                    <a href="#" th:href="@{/his}">Package History</a>
+        
+                    <button id="id01" class="lg_btn" >Logout</button>
+                  </div>
+              </div>
+            </div>
+          </header>
+
+
+
+
+
+  
+	
+	<!-- Main content here -->
+   <div class="enquriy"> 
+  <h1>Enquriy</h1>
+</div>
+    <div class="enquiry-form">
+        
+      <form action="#" th:action="@{/enqry}" method="post" class="animated-form">
+                 
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+    
+          <label for="mobile">Mobile:</label>
+          <input type="tel" id="mobile" name="mobile" placeholder="Your mobile number" required minlength="10" maxlength="10">
+    
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Your email address" required>
+    
+          <label for="package">Package:</label>
+    <select id="package" name="spackage" required>
+      <option value="">Select a package</option>
+      <option value="Nature">Nature</option>
+      <option value="Adventure">Adventure</option>
+      <option value="Spiritual">Spiritual</option>
+    </select>
+
+    <label for="price">Price:</label>
+    <input type="text" id="price" name="price" placeholder="Package price" >
+    
+          <!-- <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required> -->
+    
+          
+    
+          <button type="submit">Submit Enquiry</button>
+        </form>
+      </div>
+
+     
+
+
+
+
+	 
+
+</body>
+</html>
