@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 //import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -102,26 +103,50 @@ public class demoController {
     //     model.addAttribute("result", result);
     //     return "package";
     // }
-    
-@PostMapping("/uslogin")
-public String userloggin(@ModelAttribute UserLogin userlogin,Model model) {
-    // Assuming ser.loginuser(userlogin) returns true for a successful login.
-    boolean loginSuccessful = ser.loginuser(userlogin);
 
-    if (loginSuccessful) {
-        String loggedInUserEmail = userlogin.getEmail();
-        String result = userlogin.getEmail();
+
+    @PostMapping("/uslogin")
+public String userLogin(@ModelAttribute UserLogin userLogin, Model model) {
+    // Get the user from the database based on the provided email
+    UserLogin existingUser = ser.getUserByEmail(userLogin.getEmail());
+
+    // Check if the user exists and if the provided password matches the stored password
+    if (existingUser != null && existingUser.getPassword().equals(userLogin.getPassword())) {
+        // Successful login
+        String result = userLogin.getEmail();
         model.addAttribute("result", result);
-
-        return "redirect:/dashboard?email=" + loggedInUserEmail;
+        return "package";
     } else {
-        // Handle unsuccessful login, for example, redirect to the login page with an error message.
-        return "redirect:/uslogin?error=1"; // Replace "/login" with the URL of your login page.
+        // Login failed, show an error message
+        model.addAttribute("errorMsg", "Invalid email or password. Please check and try again.");
+        return "uslogin"; 
     }
-
-     
-
 }
+
+    
+// @PostMapping("/uslogin")
+// public String userloggin(@ModelAttribute UserLogin userlogin,Model model) {
+//     // Assuming ser.loginuser(userlogin) returns true for a successful login.
+//     boolean loginSuccessful = ser.loginuser(userlogin);
+
+//     if (loginSuccessful) {
+//         String loggedInUserEmail = userlogin.getEmail();
+//         String result = userlogin.getEmail();
+//         model.addAttribute("result", result);
+
+//         return "redirect:/dashboard?email=" + loggedInUserEmail;
+//     } else {
+//         // Handle unsuccessful login, for example, redirect to the login page with an error message.
+//         return "redirect:/uslogin?error=1"; // Replace "/login" with the URL of your login page.
+//     }
+// }
+
+
+
+
+
+
+
 
 
 
@@ -134,6 +159,8 @@ public String userloggin(@ModelAttribute UserLogin userlogin,Model model) {
 
         return "userhistory"; 
     }
+
+
 
 
   
@@ -173,6 +200,24 @@ public String userloggin(@ModelAttribute UserLogin userlogin,Model model) {
         enqser.enquiryAdd(userenquiry);
         return "redirect:/his";
     }
+
+    // // for edit enqury
+    
+    // @GetMapping("/updateuser")
+    // public String updateByID(@RequestParam("id") int id, Model model)
+    // {
+    //     Userenquiry u = enqser.getbyid(id);
+    //     model.addAttribute("updatedata" , u);
+    //     return "updateenq";
+    // }
+
+    // @PostMapping("/update")
+    // public String update(@ModelAttribute Userenquiry userenquiry){
+    //     enqser.enquiryAdd(userenquiry);
+    //     return "redirect:/pkg";
+    // }
+
+   
 
     @GetMapping("/his")
     public String allpackagehistory(@ModelAttribute Userenquiry userenquiry, Model model) {

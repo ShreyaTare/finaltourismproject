@@ -1,6 +1,7 @@
 package com.myexample.mytourism.MyService;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -53,7 +54,29 @@ public class myenquireser {
         // public List<Userenquiry> getPackageHistoryForUser(String email) {
         //     return myenq.findByEmail(email);
         // }
-    
-        
+    //     public List<Userenquiry> getPackageHistoryForUser(String email) {
+    //     // Use the repository method to fetch the package history for the given email
+    //     return userEnquiryRepository.findByEmail(email);
+    // }
+
+
+    //update enquiry
+
+    public Userenquiry getbyid(int id){
+        Optional<Userenquiry> table = myenq.findById(id);
+        if(table.isPresent()){
+            return table.get();
+        }else{
+            return null;
+        }
+    }
+    // public User getById(int id) {
+    //     Optional<User> table = repo.findById(id);
+    //     if(table.isPresent()){
+    //         return table.get();
+    //      }else{
+    //         return null;
+    //      }
+    //   }
 
 }

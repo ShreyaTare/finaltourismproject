@@ -29,7 +29,7 @@
                     <a href="#" th:href="@{/form}">Enquiry</a>
                     <!-- <a href="#" th:href="@{/cntmelist}">Contact US</a> -->
                     <a href="#" th:href="@{/his}">Package History</a>
-                    <a href="#" th:href="@{/dashboard}">Userhistory</a>
+                    <!-- <a href="#" th:href="@{/dashboard}">Userhistory</a> -->
                     <button id="id01" class="lg_btn" >Logout</button>
                   </div>
               </div>
@@ -38,8 +38,8 @@
           
 <div class="pk">
   <form class="d-flex" action="#" th:action="@{/dashboard}" method="get">
-    <!-- <input class="form-control me-2" type="search" name="keyword" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success" type="submit">Search</button> -->
+    <input class="form-control me-2" type="search" name="packageHistory" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
     <section >
       <h1>Yayyy Login Successful <span th:text="${result}"></span>
       </h1>

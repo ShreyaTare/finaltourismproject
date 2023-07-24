@@ -28,7 +28,7 @@
                     <a href="#" th:href="@{/form}">Enquiry</a>
                     <!-- <a href="#" th:href="@{/cntmelist}">Contact US</a> -->
                     <a href="#" th:href="@{/his}">Package History</a>
-                    
+                    <a href="#" th:href="@{/edit}">Edit Enquiry</a> 
                     <button id="id01" class="lg_btn" >Logout</button>
                   </div>
               </div>
@@ -37,11 +37,9 @@
 
 
 
-<!-- <center>
-<div>
- <button> <a href="#" th:href="@{/updateuser}">Edit Enquiry</a></button>
-</div>
-</center> -->
+
+
+ 
 	
 	<!-- Main content here -->
    <div class="enquriy"> 
@@ -49,19 +47,19 @@
 </div>
     <div class="enquiry-form">
         
-      <form action="#" th:action="@{/enqry}" method="post" class="animated-form">
-                 
+      <form action="#" th:action="@{/update}" th:object="${updatedata}" method="post" class="animated-form">
+        <input type="hidden" name="id" th:value="${updatedata.id}">      
           <label for="name">Name:</label>
-          <input type="text" id="name" name="name" placeholder="Your name" required>
+          <input type="text" id="name" name="name" placeholder="Your name" th:value="${updatedata.name}" required>
     
           <label for="mobile">Mobile:</label>
-          <input type="tel" id="mobile" name="mobile" placeholder="Your mobile number" required minlength="10" maxlength="10">
+          <input type="tel" id="mobile" name="mobile" placeholder="Your mobile number" th:value="${updatedata.mobile}" required minlength="10" maxlength="10">
     
           <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="Your email address" required>
+          <input type="email" id="email" name="email" placeholder="Your email address" th:value="${updatedata.email}" required>
     
           <label for="package">Package:</label>
-    <select id="package" name="spackage" required>
+    <select id="package" name="spackage" th:value="${updatedata.spackage}" required>
       <option value="">Select a package</option>
       <option value="Nature">Nature</option>
       <option value="Adventure">Adventure</option>
@@ -69,13 +67,13 @@
     </select>
 
     <label for="price">Price:</label>
-    <input type="text" id="price" name="price" placeholder="Package price" >
+    <input type="text" id="price" name="price" placeholder="Package price" th:value="${updatedata.price}" >
     
           <!-- <label for="date">Date:</label>
           <input type="date" id="date" name="date" required> -->
     
           
-          
+    
           <button type="submit">Submit Enquiry</button>
         </form>
       </div>

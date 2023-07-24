@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="www.thymeleaf.org">
   <head>
     <title>Travel Website</title>
     
@@ -57,7 +57,7 @@
 <body>
 
   <center> <h1> User Login Form </h1> </center> 
-  <form action="#" th:action="@{/uslogin}" method="post" th:object="${userlogin}">
+  <form action="#" th:action="@{/uslogin}" method="post" >
       <div class="container"> 
        
           <label>Username : </label> 
@@ -79,10 +79,12 @@
        
     </div>
   </form> 
- 
-  <div th:if="${error}" class="error-message">
+  <div th:if="${errorMsg}" class="error-message">
+    <p  style="color: red;"></p>
+</div> 
+  <!--th:text="${errorMsg}" /* <div th:if="${error}" class="error-message">
     <p th:text="${error}" style="color: red;"></p>
-</div>
+</div> */ -->
 
 <script>
   function togglePasswordVisibility() {
