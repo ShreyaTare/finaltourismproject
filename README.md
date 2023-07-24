@@ -29,4 +29,4 @@ The project is developed using the following technologies:
 - Spring Boot
 - Thymeleaf (for templating)
 - MySQL (for database)
-- HTML, CSS, JavaScript
+- HTML, CSS, JavaScript ,Bootstrap
